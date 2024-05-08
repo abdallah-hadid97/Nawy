@@ -15,8 +15,8 @@ export const getAllApts = async (req: express.Request, res: express.Response) =>
 
 export const addApt = async (req: express.Request, res: express.Response) => {
     try {
-        const {ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image} = req.body;
-        const apt = await createApt({ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image});
+        const {ref, title, info, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image} = req.body;
+        const apt = await createApt({ref, title, info, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image});
 
         return res.status(200).json(apt).end();
     } catch (error) {

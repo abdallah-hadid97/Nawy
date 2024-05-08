@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 const AptSchema = new mongoose.Schema({
     ref: { type: String, required: true},
     title: { type: String, required: true},
+    info: {type: String, required: true},
     location: { type: String, required: true},
     price: { type: Number, required: true},
     bedrooms: { type: Number, required: true},
