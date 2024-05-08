@@ -9,7 +9,8 @@ const AptSchema = new mongoose.Schema({
     bathrooms: { type: Number, required: true},
     area: { type: Number, required: false},
     finished: { type: Boolean, required: false},
-    deliveryDate: { type: Number, required: false}
+    deliveryDate: { type: Number, required: false},
+    image: {type: String, required: false}
 });
 
 export const AptModel = mongoose.model('Apt', AptSchema);
@@ -17,3 +18,4 @@ export const AptModel = mongoose.model('Apt', AptSchema);
 export const getApts = () => AptModel.find();
 export const createApt = (values: Record<string, any>) => new AptModel(values).save().then((apt) => apt.toObject()); 
 export const getAptByRef = (ref: String) => AptModel.findOne({ ref });
+export const getAptById = (id: String) => AptModel.findById(id);

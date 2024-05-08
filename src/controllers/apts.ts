@@ -1,6 +1,6 @@
 import express from 'express';
 
-import { getApts, createApt, getAptByRef } from '../db/apts';
+import { getApts, createApt, getAptByRef, getAptById } from '../db/apts';
 
 export const getAllApts = async (req: express.Request, res: express.Response) => {
     try {
@@ -15,8 +15,8 @@ export const getAllApts = async (req: express.Request, res: express.Response) =>
 
 export const addApt = async (req: express.Request, res: express.Response) => {
     try {
-        const {ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate} = req.body;
-        const apt = await createApt({ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate});
+        const {ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image} = req.body;
+        const apt = await createApt({ref, title, location, price, bedrooms, bathrooms, area, finished, deliveryDate, image});
 
         return res.status(200).json(apt).end();
     } catch (error) {
@@ -27,8 +27,8 @@ export const addApt = async (req: express.Request, res: express.Response) => {
 
 export const getAptDetails = async (req: express.Request, res: express.Response) => {
     try {
-        const {ref} = req.body;
-        const apt = await getAptByRef(ref);
+        const {id} = req.params;
+        const apt = await getAptById(id);
 
         return res.status(200).json(apt);
     } catch (error) {
