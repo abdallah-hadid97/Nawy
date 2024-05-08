@@ -1,0 +1,18 @@
+version: '3.4'
+services:
+
+  backend:
+    build: ../bapi
+    container_name: bapi
+    environment:
+      - MONGO_URL=mongodb+srv://amshawky97:cr77779999@cluster0.rn8bg9t.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+    ports:
+      - 8080:8080
+
+  client:
+    build: ../client
+    container_name: client
+    ports:
+      - 3000:3000
+    links:
+      - bapi
