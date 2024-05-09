@@ -1,4 +1,4 @@
-This repo builds a Real Estate web app (Home Arena) for browsing a wide selection of apartments, villas, and other properties. The app welcomes users through a home page, from which they can navigate to the full apartment catalouge.
+This repo builds a Real Estate app (Home Arena) for browsing a wide selection of apartments, villas, and other properties. The app welcomes users through a home page, from which they can navigate to the full apartment catalouge.
 
 ![image](https://github.com/amshawky/Nawy/assets/139395723/cbbaa0db-f117-4f69-9c19-a987aebe27aa)
 
